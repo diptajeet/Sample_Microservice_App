@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: apache
+  name: apache-service
   app: sample-microservice-app
 spec:
   type: NodePort
