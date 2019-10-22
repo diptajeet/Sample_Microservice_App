@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: order-deployment
+  labels:
+    app: sample-microservice-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: order
+  template:
+    metadata:
+      name: order-pod
+      labels:
+        name: order-pod
+        app: sample-microservice-app
+    spec:
+      containers:
+        - name: order
+          image: diptajeet/microservice-kubernetes-demo-order
+          ports:
+            - containerPort: 8080

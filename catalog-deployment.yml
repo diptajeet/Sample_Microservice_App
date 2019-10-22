@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: catalog-deployment
+  labels:
+    app: sample-microservice-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: catalog
+  template:
+    metadata:
+      name: catalog-pod
+      labels:
+        name: catalog-pod
+        app: sample-microservice-app
+    spec:
+      containers:
+        - name: catalog
+          image: diptajeet/microservice-kubernetes-demo-catalog
+          ports:
+            - containerPort: 8080
