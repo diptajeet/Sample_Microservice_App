@@ -8,7 +8,7 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-      app: order
+      app: order-pod
   template:
     metadata:
       name: order-pod
